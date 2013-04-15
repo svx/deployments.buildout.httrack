@@ -1,0 +1,7 @@
+#!/bin/sh
+user="${secret:user}"
+pass="${secret:pass}"
+useragent="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.14 (KHTML, like Gecko) Chrome/24.0.1292.0 Safari/537.14"
+domain="${config:domain}"
+backupPath="/opt/deployments.buildout.httrack/var"
+/opt/httrack-3.46.1/src/httrack "$user:$pass@$domain" -O "$backupPath" "+*.$domain/*" "-*.$domain/search*" -F "$useragent"
