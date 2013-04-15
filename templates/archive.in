@@ -1,0 +1,12 @@
+#!/bin/sh
+USERAGENT="${archive:user-agent}"
+BASEURL="${config:base_url}"
+BACKUPDIR="${buildout:directory}/var/backup"
+LOGDIR="${buildout:directory}/var/log"
+LOGFILE="$LOGDIR/httrack.log"
+
+test -d $BACKUPDIR || mkdir -p $BACKUPDIR
+test -d $LOGDIR || mkdir -p $LOGDIR
+
+${archive:httrack} -O "$BACKUPPATH" "+*.$BASEURL/*" "-*.$BASEURL/search*" -F "$USERAGENT" > $LOGFILE 2> $LOGFILE
+

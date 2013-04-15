@@ -6,17 +6,20 @@
 # Packages
 *.egg
 *.egg-info
-dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
 .installed.cfg
+bin
+build
+buildout.cfg
+develop-eggs
+dist
+eggs
+include
 lib
 lib64
+local
+parts
+sdist
+var
 
 # Installer logs
 pip-log.txt
@@ -33,3 +36,4 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
